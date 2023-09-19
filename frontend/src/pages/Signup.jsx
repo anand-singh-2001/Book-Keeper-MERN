@@ -53,8 +53,9 @@ const Signup = () => {
         err.forEach((errmsg) =>
           enqueueSnackbar(errmsg.msg, { variant: "error" })
         );
+      } else {
+        enqueueSnackbar(er.response.data.error, { variant: "error" });
       }
-      enqueueSnackbar(er.response.data.error, { variant: "error" });
     } finally {
       setLoading(false);
     }

@@ -52,13 +52,14 @@ const Login = () => {
         // console.log("Error occured");
         console.log(error);
 
-        if (er.response.data.errors) {
+        if (error.response.data.errors) {
           const err = er.response.data.errors;
           err.forEach((errmsg) =>
             enqueueSnackbar(errmsg.msg, { variant: "error" })
           );
+        } else {
+          enqueueSnackbar(error.response.data.error, { variant: "error" });
         }
-        enqueueSnackbar(er.response.data.error, { variant: "error" });
       }
       // setLoading(false);
     },
