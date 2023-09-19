@@ -29,5 +29,5 @@ const UserSchema = new mongoose.Schema(
 );
 
 const User = mongoose.model("users", UserSchema); //takes the name for the model and the schema created.
-User.createIndexes(); //checks if the property specified as unique in the schema are not repeated,i.e here more than one user with the same email cannot be created.
+// User.createIndexes(); //checks if the property specified as unique in the schema are not repeated,i.e here more than one user with the same email cannot be created.
 module.exports = User;
