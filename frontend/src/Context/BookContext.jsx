@@ -113,11 +113,11 @@ const BookContextProvider = ({ children }) => {
         const result = await axios.delete(`${host}/deletebook/${id}`, {
           headers: headers,
         });
-        const json = result.data;
-        console.log(json);
+        // const json = result.data;
+        // console.log(json);
 
         //Frontend Logic:
-        console.log("Deleting the book with id:" + id);
+        // console.log("Deleting the book with id:" + id);
         setBooks((prev) => prev.filter((book) => book._id !== id));
       } catch (error) {
         console.error(error);
@@ -143,8 +143,8 @@ const BookContextProvider = ({ children }) => {
           headers: headers,
         });
 
-        const json = result.data;
-        console.log(json);
+        // const json = result.data;
+        // console.log(json);
 
         setBooks((prev) => {
           //Frontend logic:

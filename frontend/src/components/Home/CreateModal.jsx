@@ -65,7 +65,7 @@ const CreateModal = ({ onClose }) => {
       className="fixed bg-black bg-opacity-60 top-0 left-0 right-0 bottom-0 z-50 flex justify-center items-center"
       onClick={onClose}>
       <div
-        className="lg:w-[600px] md:w-[600px] sm:w-[800px] xs:w-[100vw] max-w-full h-[95vh] bg-white rounded-xl p-4 flex flex-col relative"
+        className="lg:w-[600px] md:w-[600px] sm:w-[800px] xs:w-[100vw] max-w-full lg:h-[95vh] md:h-[95vh] sm:h-[90vh] xs:h-[90vh] min-h-[90vh] bg-white rounded-xl p-4 flex flex-col relative"
         onClick={(e) => e.stopPropagation()}>
         <AiOutlineClose
           className="absolute right-6 top-6 text-3xl text-red-600 cursor-pointer"
