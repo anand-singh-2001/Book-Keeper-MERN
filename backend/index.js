@@ -27,24 +27,6 @@ app.use(express.json()); //using middleware so that the request.body can recogni
 app.use("/books", booksRoute); //tells express that for each request with prefix of books handle them with /books middleware.
 app.use("/users", userRoutes);
 
-// -------------------Render Deployment----------------------------------------
-
-const __dirname1 = path.resolve(); //the variable signifies the current working directory.
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname1, "./frontend/dist")));
-
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname1, "frontend", "dist", "index.html"));
-  });
-} else {
-  app.get("/", (request, response) => {
-    console.log(request);
-    return response.status(234).send("Welcome to MERN Stack");
-  });
-}
-
-// -------------------Render Deployment----------------------------------------
 app.get("/", (request, response) => {
   console.log(request);
   return response.status(234).send("Welcome to MERN Stack");
