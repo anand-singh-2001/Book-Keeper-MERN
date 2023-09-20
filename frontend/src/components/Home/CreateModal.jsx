@@ -73,54 +73,57 @@ const CreateModal = ({ onClose }) => {
         />
 
         <h1 className="text-3xl my-3">Create</h1>
-        {loading ? <Spinner /> : ""}
-        <div className="flex flex-col border-2 border-sky-400 rounded-xl h-[100%] lg:w-[500px] md:w-[500px] sm:w-[700px] xs:w-[90vw] p-4 mx-auto">
-          <div className=" min-h-[50px]">
-            <label className="text-xl mr-4 text-gray-500">Title</label>
-            <input
-              type="text"
-              value={books.title}
-              name="title"
-              onChange={handleChange}
-              className="border-2 border-gray-500 px-4 py-2 w-full"
-            />
-          </div>
-          <div className="min-h-[50px]">
-            <label className="text-xl mr-4 text-gray-500">Author</label>
-            <input
-              type="text"
-              value={books.author}
-              name="author"
-              onChange={handleChange}
-              className="border-2 border-gray-500 px-4 py-2 w-full"
-            />
-          </div>
-          <div className=" min-h-[50px]">
-            <label className="text-xl mr-4 text-gray-500">Description</label>
-            <textarea
-              type="text"
-              value={books.description}
-              name="description"
-              onChange={handleChange}
-              style={{ overflowY: "scroll" }}
-              className="border-2 border-gray-500 px-4 py-2 w-full h-[100px]"
-            />
-          </div>
-          <div className=" min-h-[50px]">
-            <label className="text-xl mr-4 text-gray-500">Publish Year</label>
-            <input
-              type="text"
-              value={books.publishYear}
-              name="publishYear"
-              onChange={handleChange}
-              className="border-2 border-gray-500 px-4 py-2 w-full "
-            />
-          </div>
+        {loading ? (
+          <Spinner />
+        ) : (
+          <div className="flex flex-col border-2 border-sky-400 rounded-xl h-[100%] lg:w-[500px] md:w-[500px] sm:w-[700px] xs:w-[90vw] p-4 mx-auto">
+            <div className=" min-h-[50px]">
+              <label className="text-xl mr-4 text-gray-500">Title</label>
+              <input
+                type="text"
+                value={books.title}
+                name="title"
+                onChange={handleChange}
+                className="border-2 border-gray-500 px-4 py-2 w-full"
+              />
+            </div>
+            <div className="min-h-[50px]">
+              <label className="text-xl mr-4 text-gray-500">Author</label>
+              <input
+                type="text"
+                value={books.author}
+                name="author"
+                onChange={handleChange}
+                className="border-2 border-gray-500 px-4 py-2 w-full"
+              />
+            </div>
+            <div className=" min-h-[50px]">
+              <label className="text-xl mr-4 text-gray-500">Description</label>
+              <textarea
+                type="text"
+                value={books.description}
+                name="description"
+                onChange={handleChange}
+                style={{ overflowY: "scroll" }}
+                className="border-2 border-gray-500 px-4 py-2 w-full h-[100px]"
+              />
+            </div>
+            <div className=" min-h-[50px]">
+              <label className="text-xl mr-4 text-gray-500">Publish Year</label>
+              <input
+                type="text"
+                value={books.publishYear}
+                name="publishYear"
+                onChange={handleChange}
+                className="border-2 border-gray-500 px-4 py-2 w-full "
+              />
+            </div>
 
-          <button className="p-2 bg-sky-300 m-8" onClick={handleSaveBook}>
-            Save
-          </button>
-        </div>
+            <button className="p-2 bg-sky-300 m-8" onClick={handleSaveBook}>
+              Save
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

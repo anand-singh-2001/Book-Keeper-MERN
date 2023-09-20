@@ -45,18 +45,21 @@ const DeleteModal = ({ currBook, onClose }) => {
 
         <h1 className="text-3xl my-4">Delete Book</h1>
 
-        {loading ? <Spinner /> : ""}
-
         <div className="flex flex-col items-center border-sky-400 rounded-xl  p-8 mx-auto">
-          <h3 className="text-2xl">
-            Are you sure you want to delete this book
-          </h3>
-
-          <button
-            className="p-4 bg-red-600 text-white m-8 w-full"
-            onClick={handleDelete}>
-            Yes, Delete the book!
-          </button>
+          {loading ? (
+            <Spinner />
+          ) : (
+            <>
+              <h3 className="text-2xl">
+                Are you sure you want to delete this book
+              </h3>
+              <button
+                className="p-4 bg-red-600 text-white m-8 w-full"
+                onClick={handleDelete}>
+                Yes, Delete the book!
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>

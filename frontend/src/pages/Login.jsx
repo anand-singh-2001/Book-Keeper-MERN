@@ -4,8 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { MdEmail } from "react-icons/md";
 import { FaKey } from "react-icons/fa";
+import Spinner from "../components/Spinner";
 const Login = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const [loading, setLoading] = useState(false);
 
   const { enqueueSnackbar } = useSnackbar();
   let navigate = useNavigate();
@@ -14,7 +16,7 @@ const Login = () => {
     async (e) => {
       e.preventDefault();
       //Checking if user exists:
-      // setLoading(true);
+      setLoading(true);
       if (!credentials.email || !credentials.password) {
         enqueueSnackbar("Please fill all the fields correctly", {
           variant: "error",
@@ -61,8 +63,9 @@ const Login = () => {
         } else {
           enqueueSnackbar(error.response.data.error, { variant: "error" });
         }
+      } finally {
+        setLoading(false);
       }
-      // setLoading(false);
     },
     [credentials.email, credentials.password, enqueueSnackbar, navigate]
   );
@@ -82,43 +85,46 @@ const Login = () => {
         }}>
         Login to continue to Book Store
       </h1>
-
-      <form className="form">
-        <div className="email">
-          {/* <label htmlFor="email" className="label">
+      {loading ? (
+        <Spinner />
+      ) : (
+        <form className="form">
+          <div className="email">
+            {/* <label htmlFor="email" className="label">
             Email :
           </label> */}
-          <MdEmail color="white" size={30} />
-          <input
-            type="email"
-            className="input"
-            value={credentials.email}
-            name="email"
-            onChange={handleChange}
-            id="email"
-            aria-describedby="emailHelp"
-            placeholder=" Enter your email."
-          />
-        </div>
-        <div className="password">
-          {/* <label htmlFor="password" className="label">
+            <MdEmail color="white" size={30} />
+            <input
+              type="email"
+              className="input"
+              value={credentials.email}
+              name="email"
+              onChange={handleChange}
+              id="email"
+              aria-describedby="emailHelp"
+              placeholder=" Enter your email."
+            />
+          </div>
+          <div className="password">
+            {/* <label htmlFor="password" className="label">
             Password :
           </label> */}
-          <FaKey size={30} color="white" />
-          <input
-            type="password"
-            className="input"
-            value={credentials.password}
-            onChange={handleChange}
-            id="password"
-            name="password"
-            placeholder=" Enter your password."
-          />
-        </div>
-        <button type="submit" className="submit-btn" onClick={handleClick}>
-          Submit
-        </button>
-      </form>
+            <FaKey size={30} color="white" />
+            <input
+              type="password"
+              className="input"
+              value={credentials.password}
+              onChange={handleChange}
+              id="password"
+              name="password"
+              placeholder=" Enter your password."
+            />
+          </div>
+          <button type="submit" className="submit-btn" onClick={handleClick}>
+            Submit
+          </button>
+        </form>
+      )}
     </div>
   );
 };
