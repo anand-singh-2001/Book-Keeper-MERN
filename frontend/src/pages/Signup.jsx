@@ -32,7 +32,8 @@ const Signup = () => {
     const data = { name, email, password };
     try {
       const response = await axios.post(
-        "http://localhost:5555/users/createUser",
+        // "http://localhost:5555/users/createUser",
+        "https://book-store-d41z.onrender.com/users/createUser", //new backend server after deploying the site in render.
         data,
         {
           headers: headers,
