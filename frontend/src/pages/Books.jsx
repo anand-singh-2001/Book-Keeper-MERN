@@ -38,7 +38,7 @@ const Books = () => {
           textAlign: "center",
           color: "white",
           textShadow: "0px 0px 3px black",
-          width: "50%",
+          width: "70%",
           margin: "auto",
           backdropFilter: "blur(10px)",
         }}>
