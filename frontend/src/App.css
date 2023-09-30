@@ -157,3 +157,51 @@
     margin-right: 0px;
   }
 }
+@media screen and (max-width: 1200px) {
+  .password,
+  .email,
+  .signup_labels {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 760px) and (max-width: 1000px) {
+  .password,
+  .email,
+  .signup_labels {
+    width: 55%;
+  }
+}
+
+@media screen and (min-width: 650px) and (max-width: 760px) {
+  .password,
+  .email,
+  .signup_labels {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 650px) {
+  .password,
+  .email,
+  .signup_labels {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .password,
+  .email,
+  .signup_labels {
+    width: 100%;
+  }
+  .form,
+  .signup_form {
+    width: 70%;
+  }
+  .login h1 {
+    text-align: center;
+    z-index: 10;
+  }
+  .signup h2 {
+    text-align: center;
+    z-index: 10;
+  }
+}
