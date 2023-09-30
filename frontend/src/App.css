@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .navbar {
@@ -137,20 +136,6 @@
   display: flex;
   justify-content: center;
 }
-/* .label {
-  color: white;
-  width: 38%;
-  font-size: 20px;
-  font-weight: 700;
-  display: inline-block;
-  margin: auto;
-} */
-.books {
-  /* background: url(./assets/bg2.avif) fixed no-repeat center;
-  background-size: 100vw 100vh; */
-  width: 100vw;
-  height: 100vh;
-}
 
 .arrow {
   display: flex;
@@ -170,79 +155,5 @@
   }
   100% {
     margin-right: 0px;
-  }
-}
-
-/* .addBook {
-  animation: add linear infinite;
-  animation-delay: 2s;
-  animation-duration: 2s;
-}
-@keyframes add {
-  0% {
-    transform: rotate(0);
-  }
-  25% {
-    transform: rotate(90deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  75% {
-    transform: rotate(270deg);
-  }
-  100% {
-    transform: rotate(360%);
-  }
-} */
-@media screen and (max-width: 1200px) {
-  .password,
-  .email,
-  .signup_labels {
-    width: 40%;
-  }
-}
-@media screen and (min-width: 760px) and (max-width: 1000px) {
-  .password,
-  .email,
-  .signup_labels {
-    width: 55%;
-  }
-}
-
-@media screen and (min-width: 650px) and (max-width: 760px) {
-  .password,
-  .email,
-  .signup_labels {
-    width: 65%;
-  }
-}
-@media screen and (min-width: 500px) and (max-width: 650px) {
-  .password,
-  .email,
-  .signup_labels {
-    width: 85%;
-  }
-}
-@media screen and (max-width: 500px) {
-  .password,
-  .email,
-  .signup_labels {
-    width: 100%;
-  }
-  .form,
-  .signup_form {
-    width: 70%;
-  }
-  .login h1 {
-    text-align: center;
-    z-index: 10;
-  }
-  .signup h2 {
-    text-align: center;
-    z-index: 10;
-  }
-  .app {
-    background-size: 100% 100%;
   }
 }

@@ -4,8 +4,6 @@ const mongoose = require("mongoose");
 const booksRoute = require("./routes/booksRoute");
 const cors = require("cors");
 const userRoutes = require("./routes/userRoutes");
-const path = require("path");
-require("dotenv").config();
 
 const app = express();
 
@@ -31,7 +29,7 @@ app.get("/", (request, response) => {
   console.log(request);
   return response.status(234).send("Welcome to MERN Stack");
 }); //get is an http method to get resource from the server. takes the first parameter as a string for our route, the second one is a callback to deal with the response and request
-console.log("MongoURL", mongoURL);
+// console.log("MongoURL", mongoURL);
 mongoose
   .connect(mongoURL) //connecting the database
   .then(() => {

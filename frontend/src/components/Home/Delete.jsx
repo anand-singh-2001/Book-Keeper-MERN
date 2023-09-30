@@ -1,17 +1,12 @@
 import { AiOutlineClose } from "react-icons/ai";
-// import { PiBookOpenTextLight } from "react-icons/pi";
-// import { BiUserCircle } from "react-icons/bi";
 import PropTypes from "prop-types";
 import { useSnackbar } from "notistack";
 import { useBookContext } from "../../Context/BookContext";
 import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
 import Spinner from "../Spinner";
 
-const DeleteModal = ({ currBook, onClose }) => {
+const Delete = ({ currBook, onClose }) => {
   const [loading, setLoading] = useState(false);
-  // const navigate = useNavigate();
-  //   const { id } = useParams();
   const { enqueueSnackbar } = useSnackbar();
   const { deleteBooks } = useBookContext();
 
@@ -66,9 +61,9 @@ const DeleteModal = ({ currBook, onClose }) => {
   );
 };
 
-export default DeleteModal;
+export default Delete;
 
-DeleteModal.propTypes = {
+Delete.propTypes = {
   currBook: PropTypes.node,
   onClose: PropTypes.ReactNode,
 };

@@ -5,7 +5,7 @@ const JWT_SECRET = "This is the secret token";
 const fetchUser = (request, response, next) => {
   //Get the user from the jwt token and add id to request body
   const token = request.header("auth-token");
-  console.log("Request", token);
+  // console.log("Request", token);
   if (!token) {
     response
       .status(401)

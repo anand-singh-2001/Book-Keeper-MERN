@@ -21,7 +21,7 @@ const Navbar = () => {
                 ? "0px 0px 3px black"
                 : "0px 0px 3px white",
           }}>
-          Book Store
+          Book Keeper
         </h1>
       </Link>
       <div className="nav_btn">

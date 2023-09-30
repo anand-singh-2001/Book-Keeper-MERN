@@ -27,7 +27,7 @@ router.post(
         return response.status(400).send({ errors: errors.array() });
       }
 
-      const { title, author, description, publishYear } = request.body;
+      const { title, author, description, publishYear, pinned } = request.body;
 
       console.log("UserId", request.user.id);
       const user = request.user.id;
@@ -37,6 +37,7 @@ router.post(
         author,
         description,
         publishYear,
+        pinned,
         user,
       }); //creating a new book.
 
@@ -58,20 +59,6 @@ router.get("/fetchbooks", fetchUser, async (request, response) => {
       count: books.length,
       data: books,
     });
-  } catch (error) {
-    console.log(error);
-    response.status(500).send({ message: error.message });
-  }
-});
-
-// Route to find a specific book from database by id:
-
-router.get("/getbook/:id", async (request, response) => {
-  const { id } = request.params;
-  try {
-    const book = await Book.findById(id); //getting the book from the database.
-
-    return response.status(200).send(book);
   } catch (error) {
     console.log(error);
     response.status(500).send({ message: error.message });

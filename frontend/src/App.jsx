@@ -7,6 +7,8 @@ import Books from "./pages/Books";
 import { styled } from "styled-components";
 
 const Div = styled.div`
+  overflow: hidden;
+  height: 100vh;
   background-image: ${(props) =>
     `url('/assets/${
       props.pathname === "/login"
@@ -35,8 +37,10 @@ const Div = styled.div`
     background-size: ${(props) =>
       props.pathname === "/login" || (props.pathname === "/" && "60% 85%")};
   }
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
+    height: 100%;
     background-size: 100% 100%;
+    overflow-y: scroll;
   }
 `;
 

@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
 import Spinner from "../components/Spinner";
 import { useNavigate } from "react-router-dom";
-// import { MdOutlineAddBox } from "react-icons/md";
 import BooksTable from "../components/Home/BooksTable";
-// import BooksCard from "../components/Home/BooksCard";
 import { useBookContext } from "../Context/BookContext";
-import CreateModal from "../components/Home/CreateModal";
 import { BsArrowRight } from "react-icons/bs";
 import { BsFillPlusCircleFill } from "react-icons/bs";
+import Create from "../components/Home/Create";
 
 const Books = () => {
-  // const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [createModal, setCreateModal] = useState(false);
   // const [showType, setShowType] = useState("table");
@@ -20,7 +17,6 @@ const Books = () => {
   useEffect(() => {
     setLoading(true);
     //Getting the books for the specified user if logged in.
-    // console.log(localStorage.getItem("email"));
 
     if (localStorage.getItem("token")) {
       fetchBooks();
@@ -34,7 +30,7 @@ const Books = () => {
   const user = localStorage.getItem("email");
 
   return (
-    <div className="p-4 books">
+    <div className="p-4 " style={{ height: "100%" }}>
       <h1
         style={{
           fontSize: "25px",
@@ -42,13 +38,14 @@ const Books = () => {
           textAlign: "center",
           color: "white",
           textShadow: "0px 0px 3px black",
+          width: "50%",
+          margin: "auto",
+          backdropFilter: "blur(10px)",
         }}>
         Welcome {user}
       </h1>
 
-      <div
-        className="flex justify-end items-center "
-        style={{ marginTop: "50px" }}>
+      <div className="flex justify-end items-center ">
         <div className="arrow">
           <p
             style={{
@@ -65,12 +62,7 @@ const Books = () => {
             style={{ textShadow: "0px 0px 3px black" }}
           />
         </div>
-        {/* <MdOutlineAddBox
-          className="text-sky-400 text-4xl"
-          onClick={() => setCreateModal(true)}
-          style={{ cursor: "pointer" }}
-          size={50}
-        /> */}
+
         <BsFillPlusCircleFill
           onClick={() => setCreateModal(true)}
           style={{ cursor: "pointer" }}
@@ -81,7 +73,7 @@ const Books = () => {
         {/* </Link> */}
       </div>
       {createModal === true && (
-        <CreateModal
+        <Create
           onClose={() => {
             setCreateModal(false);
           }}

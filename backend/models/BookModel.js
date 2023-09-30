@@ -25,6 +25,10 @@ const BookSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    pinned: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true, //provides the timestamps in our database.
