@@ -14,7 +14,7 @@ const Div = styled.div`
       props.pathname === "/login"
         ? "login.svg"
         : props.pathname === "/signup"
-        ? "signup_bg.jpg"
+        ? "signup.svg"
         : "book.svg"
     }')`};
   background-attachment: fixed;
@@ -35,12 +35,12 @@ const Div = styled.div`
       : "#212139"};
   @media (max-width: 1000px) {
     background-size: ${(props) =>
-      props.pathname === "/login" || (props.pathname === "/" && "60% 85%")};
+      (props.pathname === "/login" && "60% 85%") ||
+      (props.pathname === "/" && "60% 85%")};
   }
   @media (max-width: 768px) {
     height: 100%;
     background-size: 100% 100%;
-    overflow-y: scroll;
   }
 `;
 

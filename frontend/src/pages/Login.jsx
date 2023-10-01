@@ -81,9 +81,10 @@ const Login = () => {
           fontSize: "30px",
           fontWeight: 700,
           padding: "5px",
+          color: "#d8324e",
           textShadow: "0px 0px 3px white",
         }}>
-        Login to continue to Book Store
+        Login
       </h1>
       {loading ? (
         <Spinner />

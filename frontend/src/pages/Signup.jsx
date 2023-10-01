@@ -69,12 +69,11 @@ const Signup = () => {
     <div className="signup">
       <h2
         style={{
-          margin: "20px auto",
+          margin: "50px auto 10px auto",
           fontSize: "30px",
           fontWeight: 700,
-          marginTop: "50px",
-          color: "white",
-          textShadow: "0px 0px 3px black",
+          color: "black",
+          textShadow: "0px 0px 3px white",
         }}>
         Create an account to store your Books
       </h2>
