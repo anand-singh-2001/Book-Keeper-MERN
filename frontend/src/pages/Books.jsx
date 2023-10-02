@@ -30,7 +30,7 @@ const Books = () => {
   const user = localStorage.getItem("email");
 
   return (
-    <div className="p-4 " style={{ height: "100%" }}>
+    <div className="p-4 ">
       <h1
         style={{
           fontSize: "25px",

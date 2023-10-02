@@ -8,7 +8,7 @@ const BooksTable = () => {
   // console.log(books);
 
   return (
-    <div className="lg:w-[80%] md:w-[100%] sm:w-[90%] xs:w-[80%] h-[100%] item-center justify-center m-auto mt-[20px]">
+    <div className="lg:w-[80%] md:w-[100%] sm:w-[90%] xs:w-[80%]  item-center justify-center m-auto mt-[20px]">
       {loading ? (
         // <CircularProgress />
         // <Skeleton variant="rectangular" height={"50%"} />
